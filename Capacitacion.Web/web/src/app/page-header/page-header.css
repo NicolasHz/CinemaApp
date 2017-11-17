@@ -1,0 +1,57 @@
+
+.mdl-layout{
+    position: fixed;
+}
+.active {
+    background-color: #00BCD4;
+    color: #37474F!important;
+}
+ul{
+    background-color: #6f8691;
+    list-style-type: circle;
+}
+li{
+    min-height: 10px;
+    padding:10;
+}
+.mdl-list__item{
+    color:rgb(178, 199, 209);
+    font-size: 14px;
+}
+
+.lista {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s linear;
+  }
+.ocultar + ul{
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+}
+ a {
+    cursor: pointer;
+    color: #b3d4fc!important;
+}
+li{
+    outline: none;
+}
+
+.icon-edit , .icon-delete{
+    opacity: 0;
+    transition: all 0.2s linear;
+    position: absolute;
+}
+.icon-edit{
+    right: 35px;
+}
+.icon-delete{
+    right: 5px;
+    color:#E57373!important;
+}
+.showEditDelete a{
+    opacity: 1;
+}

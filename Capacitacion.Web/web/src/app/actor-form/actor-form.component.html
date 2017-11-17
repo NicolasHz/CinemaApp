@@ -1,0 +1,41 @@
+ <div class="container wow fadeInUp" data-wow-duration="2s">
+    <form (ngSubmit)="onSubmit()" [formGroup]="actorForm">
+      <h1>Add new actor</h1>
+      <div class="form-group">
+        <input type="text"
+         class="form-control" 
+         id="firstname" 
+         formControlName="firstname"
+         >
+        <label class="control-label" for="input">Firstname</label>
+        <i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="text"
+         class="form-control" 
+         id="lastname" 
+         formControlName="lastname"
+         >
+        <label class="control-label" for="input">Lastname</label>
+        <i class="bar"></i>
+      </div>
+
+      <div class="form-group">
+        <input type="text"
+         class="form-control"
+         id="Image"
+         formControlName="pictureLink"
+         >
+        <label class="control-label" for="input">Image</label>
+        <i class="bar"></i>
+      </div>
+
+      <div class="button-container">
+        <button class="button" type="submit" [disabled]="!actorForm.valid" >
+          <span>Submit</span>
+        </button>
+      </div>
+    </form>
+  
+  </div>
+  <app-loader *ngIf="loader"></app-loader>

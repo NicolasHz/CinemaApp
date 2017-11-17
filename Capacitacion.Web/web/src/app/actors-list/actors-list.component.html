@@ -1,0 +1,16 @@
+
+
+    <div class="mdl-grid demo-content">
+      <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid wow fadeInUp" data-wow-duration="2s" style="min-height: 80vh;">
+          <!--LISTA DE PELICULAS-->
+        <div  *ngFor="let actor of actors " actor-details (actorToDelete)="deleteActor(actor.id)" [actor]="actor"  class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop wow fadeInUp" data-wow-duration="1s">
+          
+        </div>
+        <div  *ngIf="actors == null" class="wrap">
+          <div class="loading">
+            <div class="bounceball"></div>
+            <div class="text">LOADING ACTORS</div>
+          </div>
+        </div>
+          <!--LISTA DE PELICULAS-->
+      </div>

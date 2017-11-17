@@ -1,0 +1,14 @@
+.count-label{
+    border-radius: 50px;
+    padding: 8px;
+    display: inline-block;
+    margin: 4px;
+    color: white;
+    background-color: #9C27B0;
+  }
+  .cinema{
+    background: url('../../assets/img/cinema-logo.jpg') no-repeat;
+    background-size: cover;
+    background-position:center;
+    min-height: 400px; 
+  }

@@ -1,0 +1,31 @@
+
+  <div class="container wow fadeInUp" data-wow-duration="2s">
+    <form (ngSubmit)="onSubmit()" [formGroup]="genreForm">
+      <h1 *ngIf="!editing; else  edith1 " >Add new genre</h1>
+      <ng-template #edith1 ><h1>Edit genre</h1></ng-template>
+      <div class="form-group">
+        <input type="text"
+         class="form-control" 
+         id="name" 
+         formControlName="name"
+         >
+        <label class="control-label" for="input">Name</label>
+        <i class="bar"></i>
+        <label for="input" style="color:red" *ngIf="exists">This genre name already exist</label>
+      </div>
+      <div class="button-container">
+        <button *ngIf="!editing; else  edit " class="button" type="submit" [disabled]="!genreForm.valid" >
+          <span>Submit</span>
+        </button>
+        <ng-template #edit>
+            <button  class="button"  type="submit" [disabled]="!genreForm.valid" >
+                <span>Update</span>
+              </button>
+        </ng-template>
+      </div>
+    </form>
+  
+  </div>
+
+  <app-loader *ngIf="loader"></app-loader>
+  

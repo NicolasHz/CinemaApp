@@ -1,0 +1,35 @@
+
+.modal_nb{
+    opacity:0;
+    visibility: hidden;
+    position: absolute;
+    display: inline-table;
+    margin: 0px;
+    padding: 2px;
+    z-index: 20;
+    -webkit-transition: visibility 0.5s, opacity 0.5s linear;
+    -moz-transition: visibility 0.5s, opacity 0.5s linear;
+    -ms-transition: visibility 0.5s, opacity 0.5s linear;
+    -o-transition: visibility 0.5s, opacity 0.5s linear;
+    transition: visibility 0.5s, opacity 0.5s linear;
+    width: 101%;
+    height: 90%;
+}
+
+.showModal +  .modal_nb{
+    zoom: 1;
+    opacity: 1;
+    visibility: visible;
+}
+.icon{
+    cursor: pointer;
+}
+.icon-edit{
+    float: right;
+    margin: 4px;
+}
+.icon-delete{
+    float: right;
+    margin: 4px;
+    color: #E57373!important;
+}

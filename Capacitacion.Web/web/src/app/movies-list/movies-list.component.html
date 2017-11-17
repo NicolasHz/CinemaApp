@@ -1,0 +1,22 @@
+
+
+    <div class="mdl-grid demo-content">
+      <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid wow fadeInUp" data-wow-duration="2s" style="min-height: 80vh;">
+          <!--LISTA DE PELICULAS-->
+        <div  *ngFor="let movie of movies | filter:filterService.filterString:'name'"  movie-details (movieToDelete)="deleteMovie(movie.id)" [movie]="movie"  class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-desktop wow fadeInUp" data-wow-duration="1s">
+          
+        </div>
+        <div  *ngIf="movies == null" class="wrap">
+          <div class="loading">
+            <div class="bounceball"></div>
+            <div class="text">LOADING MOVIES</div>
+          </div>
+        </div>
+          <!--LISTA DE PELICULAS-->
+      </div>
+      <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing wow fadeInRight" data-wow-duration="2s">
+        <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+        <app-genre-counter [countGenres]="countGenres" ></app-genre-counter>
+        </div>
+      </div>
+    </div>

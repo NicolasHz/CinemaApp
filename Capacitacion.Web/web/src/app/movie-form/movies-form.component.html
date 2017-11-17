@@ -1,0 +1,90 @@
+
+<div class="container wow fadeInUp" data-wow-duration="2s">
+  <form (ngSubmit)="onSubmit()" [formGroup]="movieForm">
+    <h1>Add new movies</h1>
+    <div class="form-group">
+      <input type="text"
+       class="form-control" 
+       id="name" 
+       formControlName="name"
+       >
+      <label class="control-label" for="input">Name</label>
+      <i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <select class="form-control" 
+       id="genreId"
+       name="genreId" 
+       formControlName="genreId">
+        <option *ngFor="let genre of genres" [value]="genre.id" [selected]="genre.id === movie?.genre.id">{{genre.name}}</option>
+      </select>
+      <label class="control-label" for="select">Genre</label>
+      <i class="bar"></i>
+    </div>
+    <div class="form-group">
+        <select multiple class="form-control actors" 
+         id="actors"
+         name="actors" 
+         formControlName="actors">
+          <option *ngFor="let actor of actors" [value]="actor">{{actor.firstName}} {{actor.lastName}} </option>
+        </select>
+        <label class="control-label" for="select">Actors</label>
+        <i class="bar"></i>
+      </div>
+    <div class="form-group">
+      <input type="Date" 
+       class="form-control" 
+       id="Release" 
+       formControlName="releaseDate"
+       [value]="movie?.releaseDate"
+       >
+      <label class="control-label" for="input">Date</label>
+      <i class="bar"></i>
+    </div>
+    <div class=" range-slider">
+        <label class="control-label runtime-label" for="input">Runtime</label>
+      <input 
+      type="range" 
+      min="30" max="300"
+      class="form-control"
+      id="Runtime" 
+      formControlName="runtime"
+      class="range-slider__range">
+      <span class="range-slider__value">{{movieForm.value.runtime}} min</span>
+      <i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <textarea type="text" 
+       class="form-control" 
+       id="Plot"
+       formControlName="plot"
+       ></textarea>
+      <label class="control-label" for="textarea">Plot</label>
+      <i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text"
+       class="form-control"
+       id="Image"
+       formControlName="coverLink"
+       >
+      <label class="control-label" for="input">Image</label>
+      <i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text"
+       class="form-control"
+       id="Video"
+       formControlName="video"
+       >
+      <label class="control-label" for="input">Video</label>
+      <i class="bar"></i>
+    </div>
+    <div class="button-container">
+      <button class="button" type="submit" [disabled]="!movieForm.valid" >
+        <span>Submit</span>
+      </button>
+    </div>
+  </form>
+</div>
+<app-loader *ngIf="loader"></app-loader>
